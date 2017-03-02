@@ -1,15 +1,18 @@
 ## Tổng quan
-Domain API: https://365ok.co/ <br/>
+Domain API: https://admin.365ok.vn/ <br/>
 Giao thức: HTTP POST (Form-Data), HTTP GET <br/>
 Kết quả trả về: 
 + Status:200 => Thành công <br/>
 + Status: != 200 => Thông báo lỗi qua field message. <br/>
 
 * Mô tả chung:<br/>
-'page' => Kiểu int là số trang <br/>
-'limit' => Số bản ghi hiển thị trên mỗi trang<br/>
-'q' => Chuỗi tìm kiếm theo tên ...<br/>
-'status' => Trạng thái ...<br/>
+```
+'page' => Kiểu int là số trang 
+'limit' => Số bản ghi hiển thị trên mỗi trang
+'q' => Chuỗi tìm kiếm theo tên ...
+'status' => Trạng thái ...
+```
+
 
 ### 1. Đăng nhập hệ thống (general)
 Mô tả: Đăng nhập hệ thống get accesstoken <br/>
@@ -17,11 +20,11 @@ Mô tả: Đăng nhập hệ thống get accesstoken <br/>
 * Link: /api/auth/login
 
 * Tham số truyền vào: Post
-```json
-{
-  "username":"Tên đăng nhập",
-  "password":"Mật khẩu"
-}
+```php
+[
+    "username"=>"Tên đăng nhập",
+    "password"=>"Mật khẩu"
+]
 ```
 
 * Trả về
@@ -120,7 +123,7 @@ Mô tả: Đăng nhập hệ thống get accesstoken <br/>
 * Link : /api/customer/login
 ```php
 [
-   'username' => 'string',(Số điện thoại - Username - Email)
+    'username' => 'string (Số điện thoại - Username - Email)',
     'password' => 'string',
 ]
 ```
@@ -168,11 +171,11 @@ Mô tả: Đăng nhập hệ thống get accesstoken <br/>
 * Link : /api/website-slideshow
 ```php
 [
-     'name' => 'string',
-      'q' => 'string',
-      'page' => 'int',
-      'limit' => 'int',
-      'type' => 'int'
+    'name' => 'string',
+    'q' => 'string',
+    'page' => 'int',
+    'limit' => 'int',
+    'type' => 'int'
 ]
 ```
 
@@ -196,14 +199,14 @@ Mô tả: Đăng nhập hệ thống get accesstoken <br/>
 * Link : /api/news
 ```php
 [
-            'category_id' => 'string',
-            'name' => 'string',
-            'status' => 'int',
-            'idnot' => 'int',
-            'q' => 'string',
-            'page' => 'int,1',
-            'limit' => 'int,20',
-        ]
+    'category_id' => 'string',
+    'name' => 'string',
+    'status' => 'int',
+    'idnot' => 'int',
+    'q' => 'string',
+    'page' => 'int,1',
+    'limit' => 'int,20',
+]
 ```
 
 * Trả về: Object Json (danh sách tin tức hoặc danh sách tin tức liên quan)
@@ -227,14 +230,14 @@ Mô tả: Đăng nhập hệ thống get accesstoken <br/>
 * Link : /api/store
 ```php
 [
-            'email' => 'string',
-            'phone' => 'string',
-            'code' => 'string',
-            'status' => 'int',
-            'q' => 'string',
-            'page' => 'int,1',
-            'limit' => 'int,20',
-        ]
+    'email' => 'string',
+    'phone' => 'string',
+    'code' => 'string',
+    'status' => 'int',
+    'q' => 'string',
+    'page' => 'int,1',
+    'limit' => 'int,20',
+]
 ```
 
 * Trả về: Object Json (danh sách cửa hàng)
@@ -255,14 +258,15 @@ Mô tả: Đăng nhập hệ thống get accesstoken <br/>
 
 * Link : /api/attribute
 ```php
-[           'type' => 'int',
-             'name' => 'string',
-             'code' => 'string',
-             'status' => 'int',
-             'q' => 'string',
-             'page' => 'int',
-             'limit' => 'int',
-        ]
+[           
+    'type' => 'int',
+    'name' => 'string',
+    'code' => 'string',
+    'status' => 'int',
+    'q' => 'string',
+    'page' => 'int',
+    'limit' => 'int',
+]
 ```
 
 * Trả về: Object Json
@@ -283,13 +287,14 @@ Mô tả: Đăng nhập hệ thống get accesstoken <br/>
 
 * Link : /api/brand
 ```php
-[          'name' => 'string',
-            'code' => 'string',
-            'status' => 'int',
-            'q' => 'string',
-            'page' => 'int,1',
-            'limit' => 'int,20',
-        ]
+[          
+    'name' => 'string',
+    'code' => 'string',
+    'status' => 'int',
+    'q' => 'string',
+    'page' => 'int,1',
+    'limit' => 'int,20',
+]
 ```
 
 * Trả về: Object Json
@@ -312,16 +317,16 @@ Mô tả: Đăng nhập hệ thống get accesstoken <br/>
 * Link : /api/product
 ```php
 [
-            'brand_id' => 'int',
-            'category_id' => 'string',
-            'code' => 'string',
-            'status' => 'int,1',
-            'q' => 'string',
-            'page' => 'int,1',
-            'limit' => 'int,10',
-            'attribute_id' => 'string',
-            'product_type_id' => 'int'
-        ]
+    'brand_id' => 'int',
+    'category_id' => 'string',
+    'code' => 'string',
+    'status' => 'int,1',
+    'q' => 'string',
+    'page' => 'int,1',
+    'limit' => 'int,10',
+    'attribute_id' => 'string',
+    'product_type_id' => 'int'
+]
 ```
 
 * Trả về: Object Json

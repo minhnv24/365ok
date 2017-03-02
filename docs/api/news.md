@@ -1,15 +1,17 @@
 ## Tổng quan
-Domain API: https://365ok.co/ <br/>
+Domain API: https://admin.365ok.vn/ <br/>
 Giao thức: HTTP POST (Form-Data), HTTP GET <br/>
 Kết quả trả về: 
 + Status:200 => Thành công <br/>
 + Status: != 200 => Thông báo lỗi qua field message. <br/>
 
 * Mô tả chung:<br/>
-'page' => Kiểu int là số trang <br/>
-'limit' => Số bản ghi hiển thị trên mỗi trang<br/>
-'q' => Chuỗi tìm kiếm theo tên ...<br/>
-'status' => Trạng thái ...<br/>
+```php
+'page' => Kiểu int là số trang 
+'limit' => Số bản ghi hiển thị trên mỗi trang
+'q' => Chuỗi tìm kiếm theo tên ...
+'status' => Trạng thái ...
+```
 
 
 -----------------------
@@ -21,14 +23,15 @@ Kết quả trả về:
 
 * Link : /api/news
 ```php
-[             'category_id' => 'string',
-             'name' => 'string',
-             'status' => 'int',
-             'idnot' => 'int',
-             'q' => 'string',
-             'page' => 'int,1',
-             'limit' => 'int,20',
-        ]
+[             
+    'category_id' => 'string',
+    'name' => 'string',
+    'status' => 'int',
+    'idnot' => 'int',
+    'q' => 'string',
+    'page' => 'int,1',
+    'limit' => 'int,20',
+]
 ```
 
 * Trả về: Object Json
@@ -51,8 +54,9 @@ Kết quả trả về:
 
 * Link : /api/news/{id:[0-9]+}
 ```php
-[          
-        ]
+[
+    "id"=>"int"
+]
 ```
 
 * Trả về: Object Json

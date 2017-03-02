@@ -1,15 +1,18 @@
 ## Tổng quan
-Domain API: https://365ok.co/ <br/>
+Domain API: https://admin.365ok.vn <br/>
 Giao thức: HTTP POST (Form-Data), HTTP GET <br/>
 Kết quả trả về: 
 + Status:200 => Thành công <br/>
 + Status: != 200 => Thông báo lỗi qua field message. <br/>
 
 * Mô tả chung:<br/>
-'page' => Kiểu int là số trang <br/>
-'limit' => Số bản ghi hiển thị trên mỗi trang<br/>
-'q' => Chuỗi tìm kiếm theo tên ...<br/>
-'status' => Trạng thái ...<br/>
+```
+'page' => Kiểu int là số trang 
+'limit' => Số bản ghi hiển thị trên mỗi trang
+'q' => Chuỗi tìm kiếm theo tên ...
+'status' => Trạng thái ...
+```
+
 
 -----------------------
 ### 1. Detail_Product(Chi tiết sản phẩm)
@@ -21,8 +24,8 @@ Kết quả trả về:
 * Link : /api/product/{id:[0-9]+}
 ```php
 [
-      
-        ]
+    "id"=>"int"
+]
 ```
 
 * Trả về: Object Json
@@ -43,11 +46,11 @@ Kết quả trả về:
 * Link : /api/website-slideshow
 ```php
 [
-     'name' => 'string',
-      'q' => 'string',
-      'page' => 'int',
-      'limit' => 'int',
-      'type' => 'int'
+    'name' => 'string',
+    'q' => 'string',
+    'page' => 'int',
+    'limit' => 'int',
+    'type' => 'int'
 ]
 ```
 
@@ -71,14 +74,14 @@ Kết quả trả về:
 * Link : /api/news
 ```php
 [
-            'category_id' => 'string',
-            'name' => 'string',
-            'status' => 'int',
-            'idnot' => 'int',
-            'q' => 'string',
-            'page' => 'int,1',
-            'limit' => 'int,20',
-        ]
+    'category_id' => 'string',
+    'name' => 'string',
+    'status' => 'int',
+    'idnot' => 'int',
+    'q' => 'string',
+    'page' => 'int,1',
+    'limit' => 'int,20',
+]
 ```
 
 * Trả về: Object Json (danh sách tin tức hoặc danh sách tin tức liên quan)
@@ -102,14 +105,14 @@ Kết quả trả về:
 * Link : /api/store
 ```php
 [
-            'email' => 'string',
-            'phone' => 'string',
-            'code' => 'string',
-            'status' => 'int',
-            'q' => 'string',
-            'page' => 'int,1',
-            'limit' => 'int,20',
-        ]
+    'email' => 'string',
+    'phone' => 'string',
+    'code' => 'string',
+    'status' => 'int',
+    'q' => 'string',
+    'page' => 'int,1',
+    'limit' => 'int,20',
+]
 ```
 
 * Trả về: Object Json (danh sách cửa hàng)
@@ -130,14 +133,15 @@ Kết quả trả về:
 
 * Link : /api/attribute
 ```php
-[           'type' => 'int',
-             'name' => 'string',
-             'code' => 'string',
-             'status' => 'int',
-             'q' => 'string',
-             'page' => 'int',
-             'limit' => 'int',
-        ]
+[           
+    'type' => 'int',
+    'name' => 'string',
+    'code' => 'string',
+    'status' => 'int',
+    'q' => 'string',
+    'page' => 'int',
+    'limit' => 'int',
+]
 ```
 
 * Trả về: Object Json
@@ -158,13 +162,14 @@ Kết quả trả về:
 
 * Link : /api/brand
 ```php
-[          'name' => 'string',
-            'code' => 'string',
-            'status' => 'int',
-            'q' => 'string',
-            'page' => 'int,1',
-            'limit' => 'int,20',
-        ]
+[          
+    'name' => 'string',
+    'code' => 'string',
+    'status' => 'int',
+    'q' => 'string',
+    'page' => 'int,1',
+    'limit' => 'int,20',
+]
 ```
 
 * Trả về: Object Json
@@ -187,16 +192,16 @@ Kết quả trả về:
 * Link : /api/product
 ```php
 [
-            'brand_id' => 'int',
-            'category_id' => 'string',
-            'code' => 'string',
-            'status' => 'int,1',
-            'q' => 'string',
-            'page' => 'int,1',
-            'limit' => 'int,10',
-            'attribute_id' => 'string',
-            'product_type_id' => 'int'
-        ]
+    'brand_id' => 'int',
+    'category_id' => 'string',
+    'code' => 'string',
+    'status' => 'int,1',
+    'q' => 'string',
+    'page' => 'int,1',
+    'limit' => 'int,10',
+    'attribute_id' => 'string',
+    'product_type_id' => 'int'
+]
 ```
 
 * Trả về: Object Json
@@ -219,11 +224,11 @@ Kết quả trả về:
 * Link : /api/product-product-combo-detail 
 
 ```php
-    [
-        'product_id' => $product_id,
-        'type' => 2 ,
-        'options' => 1
-    ]
+[
+    'product_id' => $product_id,
+    'type' => 2 ,
+    'options' => 1
+]
 ```
 
 * Trả về: Object Json
