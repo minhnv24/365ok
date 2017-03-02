@@ -12,7 +12,10 @@ Kết quả trả về:
 'q' => Chuỗi tìm kiếm theo tên ...
 'status' => Trạng thái ...
 ```
-
+**Tất cả các API khi gọi lên đều kèm theo tham số**
+```
+app_token = 36501|da3c4c5f57018e3c0cf004efb26ffc87
+```
 
 -----------------------
 ### 1. News(Tin tức)
