@@ -14,7 +14,8 @@ Kết quả trả về:
 ```
 **Tất cả các API khi gọi lên đều kèm theo tham số**
 ```
-app_token = 36501|da3c4c5f57018e3c0cf004efb26ffc87
+app_token = 36501|da3c4c5f57018e3c0cf004efb26ffc87,
+website_id = 'int'
 ```
 
 ### 1. Đăng nhập hệ thống (general)
